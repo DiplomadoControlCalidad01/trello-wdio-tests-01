@@ -1,0 +1,39 @@
+const {url} = require('../../environment');
+
+const commonActions = require('../core/CommonActions');
+
+const Header = require('../pages/header.po');
+
+class Login {
+
+    constructor() {
+        this.usernameTextField = '#user';
+        this.passwordTextField = '#password';
+        this.loginButton = '#login';
+
+        browser.url(url);
+    }
+
+    setUsernameTextField(username) {
+        commonActions.setValue(this.usernameTextField, username);
+    }
+
+    setPasswordTextField(password) {
+        commonActions.setValue(this.passwordTextField, password);
+    }
+
+    clickLoginButton() {
+        commonActions.click(this.loginButton);
+    }
+
+    static loginAs(username, password) {
+        let login = new Login();
+        login.setUsernameTextField(username);
+        login.setPasswordTextField(password);
+        login.clickLoginButton();
+        return new Header();
+    }
+
+}
+
+module.exports = Login;
