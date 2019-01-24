@@ -8,19 +8,22 @@ class FormBoard {
 
     }
 
-    setNameBoardField() {
-        commonActions.setValue(this.title, 'BOARD TEST WDIO');
+    setNameBoardField(titleBoard) {
+        commonActions.setValue(this.title, titleBoard);
     }
 
     clickSaveButton() {
         commonActions.click(this.createButton);
     }
 
-     newBoard() {
-        let formBoard = new FormBoard();
-        formBoard.setNameBoardField();
-        formBoard.clickSaveButton();
+    fillForm(boardJson) {
+        let boardSteps = {
+            'Title': () => commonActions.setValue(this.title, boardJson.Title)
+        };
 
+        Object.keys(boardJson).forEach(key => {
+            boardSteps[key].call();
+        });
     }
 
 }
