@@ -1,0 +1,16 @@
+{
+  "credentials" : {
+    "sysadmin" : {
+      "username" : "jimenaluna84@gmail.com",
+      "password" : "123456abc"
+    },
+    "standardUser" : {
+      "username" : "",
+      "password" : ""
+    }
+  },
+  "url": "https://trello.com/login",
+  "timeout": {
+    "explicit" : 30000
+  }
+}
