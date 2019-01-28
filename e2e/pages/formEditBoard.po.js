@@ -3,20 +3,27 @@ const commonActions = require('../core/CommonActions');
 class EditFormBoard {
 
     constructor() {
-        this.nameBoard = 'a.board-header-btn.board-header-btn-name.js-rename-board';
-        this.nameField = 'input.list-name-input';
+        this.nameBoard = 'span.board-header-btn-text';
+        this.nameField = 'input.js-board-name.js-autofocus';
         this.saveButton = 'input.primary.wide.js-rename-board';
 
     }
 
 
+    clickNameBoard() {
+        commonActions.click(this.nameBoard);
+    }
+
     clickSaveButton() {
-        commonActions.click(this.createButton);
+
+        commonActions.click(this.saveButton);
     }
 
     fillEditForm(editBoardJson) {
         let editBoardSteps = {
             'NewTitle': () => commonActions.setValue(this.nameField, editBoardJson.NewTitle)
+
+
         };
 
         Object.keys(editBoardJson).forEach(key => {
