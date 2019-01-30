@@ -10,7 +10,7 @@ describe('Login to trello', () => {
         let formModalBoard = header.clickAddButton();
 
         let board = {
-            'Title': 'aaaaaaaaaaaaaaaaaa000New Board'
+            'Title': '000New Board'
         };
         formModalBoard.fillForm(board);
         formModalBoard.clickSaveButton();
