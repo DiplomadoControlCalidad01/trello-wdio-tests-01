@@ -1,5 +1,5 @@
 const commonActions = require('../core/CommonActions');
-const FormTeamMain = require('./pages/formTeam.po');
+const FormTeamMain = require('../pages/formTeam.po');
 
 
 
