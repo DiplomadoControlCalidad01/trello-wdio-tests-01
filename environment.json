@@ -11,6 +11,7 @@
   },
   "url": "https://trello.com/login",
   "timeout": {
-    "explicit" : 30000
+    "explicit" : 50000,
+    "login" : 50000
   }
 }
