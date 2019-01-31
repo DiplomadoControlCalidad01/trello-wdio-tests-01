@@ -1,5 +1,5 @@
 const {credentials} = require('../../environment');
-const Login = require('../pages/login.po');
+const FormTeamMain = require('../pages/formTeam.po');
 const Util = require('../pages/util.po');
 
 
@@ -13,6 +13,10 @@ describe('Login to trello', () => {
         let util = new Util();
         util.createTeam(team);
 
+        let formTeam = new FormTeamMain();
+        formTeam.clickSettingsTab();
+        formTeam.clickDeleteTeam();
+        formTeam.clickConfirmDeleteTeam();
 
     });
 });

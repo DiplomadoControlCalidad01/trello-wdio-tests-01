@@ -10,6 +10,8 @@ class FormTeamMain {
         this.boardTab = 'a.tabbed-pane-nav-item-button.js-org-profile.active';
         this.membersTab = 'a.tabbed-pane-nav-item-button.js-org-members';
         this.settingsTab = 'a.tabbed-pane-nav-item-button.js-org-account';
+        this.deleteTeam = 'div#content div.window-module.u-gutter > a > span';
+        this.confirmDelete = 'input.js-confirm.full.negate';
 
     }
 
@@ -17,6 +19,19 @@ class FormTeamMain {
     clickEditTeamButton() {
         commonActions.click(this.editTeamButton);
         return new EditFormTeam();
+    }
+
+    clickSettingsTab() {
+        commonActions.click(this.settingsTab);
+
+    }
+  clickDeleteTeam() {
+        commonActions.click(this.deleteTeam);
+
+    }
+    clickConfirmDeleteTeam() {
+        commonActions.click(this.confirmDelete);
+
     }
 
 
