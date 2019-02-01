@@ -1,15 +1,20 @@
 const {credentials} = require('../../environment');
-const Util = require('../pages/util.po');
+const util = require('../pages/objectCreator');
 const EditFormBoard = require('../pages/formEditBoard.po');
-
+const Login = require('../pages/login.po');
 
 describe('Edit Board', () => {
+    let header;
+    beforeEach(() => {
+        header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
+    });
+
     it('Edit', () => {
         let board = {
             'Title': '000 NEW BOARD FOR AUTOMARESD TEST'
         };
 
-        let util = new Util();
+
         util.createBoard(board);
 
         let formEditBoard = new EditFormBoard();

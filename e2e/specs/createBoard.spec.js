@@ -1,15 +1,20 @@
 const {credentials} = require('../../environment');
 const Login = require('../pages/login.po');
-const Util = require('../pages/util.po');
+const util = require('../pages/objectCreator');
 
 
-describe('Create Board', () => {
-    it('From Add Button', () => {
+describe('Feature Board', () => {
+    let header;
+    beforeEach(() => {
+        header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
+    });
+
+    it('#BVT Create Board', () => {
         let board = {
-            'Title': '000 NEW BOARD FOR AUTOMARESD TEST'
+            'Title': '000 NEW BOARD - AUTOMATED TEST'
         };
 
-        let util = new Util();
+
         util.createBoard(board);
 
     });

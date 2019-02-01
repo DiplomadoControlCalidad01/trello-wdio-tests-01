@@ -3,28 +3,21 @@ const {credentials} = require('../../environment');
 const Login = require('../pages/login.po');
 const EditFormBoard = require('../pages/formEditBoard.po');
 const RightMenu = require('../pages/optionsRightMenu.po');
-
+const Header = require('../pages/header.po');
 
 class Util {
 
 
-    createBoard(dataBoard) {
-
-        let header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
-        let formModalBoard = header.clickAddButton();
+    static createBoard(dataBoard) {
+        let formModalBoard = new Header().clickAddButton();
         formModalBoard.fillForm(dataBoard);
         formModalBoard.clickSaveButton();
 
     }
 
-    createTeam(dataTeam) {
-
-        let header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
-        let formModalTeam = header.clickAddTeamButton();
-
-
+    static createTeam(dataTeam) {
+        let formModalTeam = new Header().clickAddTeamButton();
         formModalTeam.fillForm(dataTeam);
-
         formModalTeam.clickCreateButton();
     }
 

@@ -1,7 +1,5 @@
 const {url} = require('../../environment');
-
 const commonActions = require('../core/CommonActions');
-
 const Header = require('../pages/header.po');
 
 class Login {

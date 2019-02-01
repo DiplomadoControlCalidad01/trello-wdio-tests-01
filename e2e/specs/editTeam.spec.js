@@ -1,15 +1,21 @@
 const {credentials} = require('../../environment');
-const Util = require('../pages/util.po');
+const util = require('../pages/objectCreator');
 const FormTeamMain = require ('../pages/formTeam.po');;
-
+const Login = require('../pages/login.po');
 
 describe('Edit Team', () => {
+
+    let header;
+    beforeEach(() => {
+        header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
+    });
+
     it('Edit', () => {
         let team = {
             'Name': 'NAME TEAM',
             'Description': 'DESCRIPTION'
         };
-        let util = new Util();
+
         util.createTeam(team);
 
         let formTeam = new FormTeamMain();
