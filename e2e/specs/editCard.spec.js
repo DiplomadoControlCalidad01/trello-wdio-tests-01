@@ -21,7 +21,7 @@ describe('Card Feature', () => {
         let listData = {
             'Title': 'New List to Test'
         };
-        formList.fillListForm(listData);
+        formList.filListForm(listData);
         formList.clickSaveButton();
     });
 
