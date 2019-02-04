@@ -4,41 +4,36 @@ const FormList = require('../pages/formList.po');
 const util = require('../pages/objectCreator');
 const FormCard = require('../pages/formCard.po');
 
-describe('Create Card', () => {
-   let header;
+describe('Card Feature', () => {
+    let header;
     beforeEach(() => {
 
-        header = Login.loginAs(credentials.standardUser.username, credentials.standardUser.password);
-        //let formModalBoard = header.clickAddButton();
+        header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
 
         let board = {
-            'Title': '000New Board'
+            'Title': 'New Board to Test Card'
         };
         util.createBoard(board);
         let formList = new FormList();
 
         let listData = {
-            'Title': 'NewList'
+            'Title': 'New Test List'
         };
-        formList.fillListForm(listData);
-        browser.pause(4000);
+        formList.filListForm(listData);
         formList.clickSaveButton();
-        browser.pause(4000);
     });
 
-    it('Create', () => {
+    it('Create Card', () => {
 
         let formCard = new FormCard();
 
         formCard.clickNewLink();
 
         let listData = {
-            'Title': 'NewCard'
+            'Title': 'New Test Card'
         };
         formCard.fillCardForm(listData);
-        browser.pause(4000);
         formCard.clickSaveButton();
-        browser.pause(4000);
     });
 
 });

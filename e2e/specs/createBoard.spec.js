@@ -2,7 +2,7 @@ const {credentials} = require('../../environment');
 const Login = require('../pages/login.po');
 const util = require('../pages/objectCreator');
 const FormTeamMain = require('../pages/formTeam.po');
-const formModalBoard = require('../pages/formModalBoard.po');
+
 
 
 describe('Feature Board', () => {

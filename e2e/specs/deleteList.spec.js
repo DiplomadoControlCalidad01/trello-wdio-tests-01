@@ -9,7 +9,7 @@ describe('Delete List', () => {
 
     beforeEach(() => {
 
-        header = Login.loginAs(credentials.standardUser.username, credentials.standardUser.password);
+        header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
 
         let board = {
             'Title': '000New Board'

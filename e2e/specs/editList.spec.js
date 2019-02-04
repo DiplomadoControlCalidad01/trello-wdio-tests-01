@@ -7,7 +7,7 @@ const FormEditList = require('../pages/formEditList.po');
 describe('Edit List', () => {
     beforeEach(() => {
 
-        let header = Login.loginAs(credentials.standardUser.username, credentials.standardUser.password);
+        let header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
         let formModalBoard = header.clickAddButton();
 
         let board = {
