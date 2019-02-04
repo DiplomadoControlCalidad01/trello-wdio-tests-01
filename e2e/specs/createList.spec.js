@@ -2,7 +2,6 @@ const {credentials} = require('../../environment');
 const Login = require('../pages/login.po');
 const FormList = require('../pages/formList.po');
 
-
 describe('List Feature', () => {
     beforeEach(() => {
 

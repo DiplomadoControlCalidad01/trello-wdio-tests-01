@@ -9,8 +9,7 @@ class EditListForm {
 
     }
 
-
-    clickEditLink() {
+     clickEditLink() {
         commonActions.click(this.nameLink);
         browser.keys(['Enter']);
     }

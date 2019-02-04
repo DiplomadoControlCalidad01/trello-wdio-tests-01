@@ -24,4 +24,5 @@ class FormEditCard {
     }
 }
 
+
 module.exports = FormEditCard;

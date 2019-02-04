@@ -4,7 +4,6 @@ const util = require('../pages/objectCreator');
 const FormTeamMain = require('../pages/formTeam.po');
 
 
-
 describe('Feature Board', () => {
     let header;
 
@@ -14,23 +13,22 @@ describe('Feature Board', () => {
 
     it('#BVT Create Board', () => {
         let board = {
-            'Title': '000 NEW BOARD - AUTOMATED TEST'
+            'Title': 'New Board to Test'
         };
         util.createBoard(board);
     });
 
     it('#BVT Create Board from Team', () => {
         let team = {
-            'Name': 'NAME TEAM',
-            'Description': 'DESCRIPTION'
+            'Name': 'New Team to Test',
+            'Description': 'Description'
         };
         util.createTeam(team);
-        browser.pause(4000);
         let formTeamMain = new FormTeamMain();
         let formModalBoard = formTeamMain.clickCreateBoard();
 
         let board = {
-            'Title': '000 NEW BOARD - AUTOMATED TEST'
+            'Title': 'New Board Form Team to Test'
         };
         formModalBoard.fillForm(board);
         formModalBoard.clickSaveButton();

@@ -9,7 +9,6 @@ class EditFormBoard {
 
     }
 
-
     clickNameBoard() {
         commonActions.click(this.nameBoard);
     }

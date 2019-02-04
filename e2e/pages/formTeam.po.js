@@ -17,7 +17,6 @@ class FormTeamMain {
 
     }
 
-
     clickCreateBoard() {
         commonActions.click(this.createBoardButton);
         return new FormBoard();

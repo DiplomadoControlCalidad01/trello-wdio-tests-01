@@ -7,7 +7,6 @@ const Header = require('../pages/header.po');
 
 class Util {
 
-
     static createBoard(dataBoard) {
         let formModalBoard = new Header().clickAddButton();
         formModalBoard.fillForm(dataBoard);

@@ -1,7 +1,7 @@
 const {credentials} = require('../../environment');
 const Login = require('../pages/login.po');
 const util = require('../pages/objectCreator');
-const formModalTeam = require('../pages/formModalTeam.po');
+
 
 
 describe('Team Feature', () => {
@@ -16,7 +16,6 @@ describe('Team Feature', () => {
             'Description': 'DESCRIPTION'
         };
         util.createTeam(team);
-
 
     });
 

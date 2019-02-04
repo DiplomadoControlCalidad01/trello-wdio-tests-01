@@ -26,7 +26,6 @@ describe('Delete List', () => {
         browser.pause(4000);
         formList.clickSaveButton();
         browser.pause(4000);
-
     });
 
     it('DeleteList', () => {

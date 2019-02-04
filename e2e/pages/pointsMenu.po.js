@@ -13,7 +13,6 @@ class PointsMenu {
         commonActions.click(this.threePointsLink);
     }
 
-
     clickCloseBoard() {
         commonActions.click(this.closeBoardMenu);
     }
