@@ -15,15 +15,12 @@ class EditFormBoard {
     }
 
     clickSaveButton() {
-
         commonActions.click(this.saveButton);
     }
 
     fillEditForm(editBoardJson) {
         let editBoardSteps = {
             'NewTitle': () => commonActions.setValue(this.nameField, editBoardJson.NewTitle)
-
-
         };
 
         Object.keys(editBoardJson).forEach(key => {

@@ -1,5 +1,6 @@
 const commonActions = require('../core/CommonActions');
 const EditFormTeam = require('../pages/formEditTeam.po');
+const FormBoard = require('../pages/formModalBoard.po');
 
 class FormTeamMain {
 
@@ -12,9 +13,15 @@ class FormTeamMain {
         this.settingsTab = 'a.tabbed-pane-nav-item-button.js-org-account';
         this.deleteTeam = 'div#content div.window-module.u-gutter > a > span';
         this.confirmDelete = 'input.js-confirm.full.negate';
+        this.createBoardButton = 'div.board-tile.mod-add';
 
     }
 
+
+    clickCreateBoard() {
+        commonActions.click(this.createBoardButton);
+        return new FormBoard();
+    }
 
     clickEditTeamButton() {
         commonActions.click(this.editTeamButton);

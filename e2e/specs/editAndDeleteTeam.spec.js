@@ -1,16 +1,17 @@
 const {credentials} = require('../../environment');
 const util = require('../pages/objectCreator');
-const FormTeamMain = require ('../pages/formTeam.po');;
+const FormTeamMain = require('../pages/formTeam.po');
+;
 const Login = require('../pages/login.po');
 
-describe('Edit Team', () => {
+describe('Team Feature', () => {
 
     let header;
     beforeEach(() => {
         header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
     });
 
-    it('Edit', () => {
+    it('Edit Team', () => {
         let team = {
             'Name': 'NAME TEAM',
             'Description': 'DESCRIPTION'
@@ -32,6 +33,20 @@ describe('Edit Team', () => {
         formEditTeam.fillEditTeamForm(editTeam);
         formEditTeam.clickSaveButton();
 
-
     });
+
+    it('Delete Team', () => {
+        let team = {
+            'Name': 'NAME TEAM',
+            'Description': 'DESCRIPTION'
+        };
+        util.createTeam(team);
+
+        let formTeam = new FormTeamMain();
+        formTeam.clickSettingsTab();
+        formTeam.clickDeleteTeam();
+        formTeam.clickConfirmDeleteTeam();
+    });
+
+
 });

@@ -8,7 +8,8 @@ class Header {
         this.appAddButton = '.icon-add.light';
         this.createBoard = 'a.js-new-board';
         this.createTeam = 'a.js-new-org';
-        this.initPage = 'span.header-btn-icon.icon-lg.icon-house.light';
+        this.home = 'span.header-btn-icon.icon-lg.icon-house.light';
+        this.addteamLeftMenu = 'div#content button > span:nth-child(2)';
     }
 
     clickAddButton() {
@@ -23,6 +24,10 @@ class Header {
         return new FormTeam();
     }
 
+    clickAddTeamButtonHome() {
+        commonActions.click(this.addteamLeftMenu);
+        return new FormTeam();
+    }
 
 }
 
