@@ -6,6 +6,7 @@ class FormEditCard {
         this.dialogNameField = 'textarea.js-card-detail-title-input';
         this.nameField = 'span.js-card-name';
         this.closeButton = 'a.dialog-close-button';
+        this.nameCard = 'span.card-short-id';
     }
 
     fillEditCardForm(listJson) {
@@ -22,6 +23,10 @@ class FormEditCard {
     clickDialogNameField() {
         commonActions.click(this.dialogNameField);
     }
+    getNameText() {
+        return commonActions.getText(this.nameField);
+    }
+
 }
 
 module.exports = FormEditCard;

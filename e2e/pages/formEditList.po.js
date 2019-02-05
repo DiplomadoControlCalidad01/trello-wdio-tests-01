@@ -6,13 +6,12 @@ class EditListForm {
         this.nameLink = 'div.list-header-target';
         this.nameField = 'textarea.list-header-name';
         this.addListLink = 'span.js-add-a-card';
-
+        this.editedField = 'h2.js-list-name-assist';
     }
 
 
     clickEditLink() {
         commonActions.click(this.nameLink);
-        browser.keys(['Enter']);
     }
 
 
@@ -25,6 +24,10 @@ class EditListForm {
         commonActions.setValue(this.nameField, editBoardJson.NewTitle);
 
     }
+    getNameText() {
+        return commonActions.getText(this.nameField);
+    }
+
 
 }
 

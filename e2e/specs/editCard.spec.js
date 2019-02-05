@@ -4,13 +4,13 @@ const FormList = require('../pages/formList.po');
 const util = require('../pages/objectCreator');
 const FormCard = require('../pages/formCard.po');
 const FormEditCard = require('../pages/formEditCard.po');
+const expect = require('chai').expect;
 
 describe('Edit Card', () => {
     let header;
     beforeEach(() => {
 
         header = Login.loginAs(credentials.standardUser.username, credentials.standardUser.password);
-        //let formModalBoard = header.clickAddButton();
 
         let board = {
             'Title': '000New Board'
@@ -51,6 +51,11 @@ describe('Edit Card', () => {
         formEditCard.fillEditCardForm(editData);
         formEditCard.clickCloseButton();
         browser.pause(4000);
+        //////////////////////assert
+        //formEditCard.clickNameField();
+        expect(formEditCard.getNameText()).to.equal(editData.Title);
+
+
     });
 
 });

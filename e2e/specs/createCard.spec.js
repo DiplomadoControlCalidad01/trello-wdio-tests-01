@@ -3,6 +3,8 @@ const Login = require('../pages/login.po');
 const FormList = require('../pages/formList.po');
 const util = require('../pages/objectCreator');
 const FormCard = require('../pages/formCard.po');
+const EditCard = require('../pages/formEditCard.po');
+const expect = require('chai').expect;
 
 describe('Create Card', () => {
    let header;
@@ -39,6 +41,11 @@ describe('Create Card', () => {
         browser.pause(4000);
         formCard.clickSaveButton();
         browser.pause(4000);
+
+        //////assert /////////
+        let editCard = new EditCard();
+        expect(editCard.getNameText()).to.equal(listData.Title);
+
     });
 
 });

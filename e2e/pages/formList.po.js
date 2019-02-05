@@ -1,14 +1,13 @@
 const commonActions = require('../core/CommonActions');
 
-class FormList {
+class FormCard {
 
     constructor() {
-        this.addlist = 'span.placeholder';
         this.nameField = 'input.list-name-input';
         this.saveButton = 'input.primary.mod-list-add-button.js-save-edit';
     }
 
-    filListForm(listJson) {
+    fillListForm(listJson) {
         commonActions.setValue(this.nameField, listJson.Title)
 
     };
@@ -18,4 +17,4 @@ class FormList {
     }
 }
 
-module.exports = FormList;
+module.exports = FormCard;

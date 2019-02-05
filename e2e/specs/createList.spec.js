@@ -1,7 +1,8 @@
 const {credentials} = require('../../environment');
 const Login = require('../pages/login.po');
 const FormList = require('../pages/formList.po');
-
+const ListView = require('../pages/listView.po');
+const expect = require('chai').expect;
 
 describe('Create List', () => {
     beforeEach(() => {
@@ -25,10 +26,13 @@ describe('Create List', () => {
         let listData = {
             'Title': 'NewList'
         };
-        formList.filListForm(listData);
+        formList.fillListForm(listData);
         browser.pause(4000);
         formList.clickSaveButton();
         browser.pause(4000);
+        ///assert////
+        let listView = new ListView();
+        expect(listView.getNameText()).to.equal(listData.Title);
 
     });
 
