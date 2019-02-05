@@ -12,7 +12,6 @@ class FormTeam {
 
     }
 
-
     clickCreateButton() {
         commonActions.click(this.createTeamButton);
         return new FormTeamMain();

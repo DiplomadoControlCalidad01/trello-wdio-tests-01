@@ -1,7 +1,7 @@
 const {credentials} = require('../../environment');
 const util = require('../pages/objectCreator');
 const FormTeamMain = require('../pages/formTeam.po');
-;
+
 const Login = require('../pages/login.po');
 
 describe('Team Feature', () => {
@@ -32,7 +32,6 @@ describe('Team Feature', () => {
 
         formEditTeam.fillEditTeamForm(editTeam);
         formEditTeam.clickSaveButton();
-
     });
 
     it('Delete Team', () => {

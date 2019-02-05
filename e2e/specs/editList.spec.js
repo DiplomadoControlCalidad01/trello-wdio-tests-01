@@ -5,9 +5,10 @@ const FormEditList = require('../pages/formEditList.po');
 
 
 describe('Edit List', () => {
+
     beforeEach(() => {
 
-        let header = Login.loginAs(credentials.standardUser.username, credentials.standardUser.password);
+        let header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
         let formModalBoard = header.clickAddButton();
 
         let board = {
@@ -16,9 +17,8 @@ describe('Edit List', () => {
 
         formModalBoard.fillForm(board);
         formModalBoard.clickSaveButton();
-        browser.pause(3000);
-        /// create List//
-        let formList = new FormList ();
+
+        let formList = new FormList();
 
         let listData = {
             'Title': 'NewList'

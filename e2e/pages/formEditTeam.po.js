@@ -10,7 +10,6 @@ class EditFormTeam {
         this.saveButton = 'input.primary.wide.js-submit-profile';
     }
 
-
     clickSaveButton() {
 
         commonActions.click(this.saveButton);

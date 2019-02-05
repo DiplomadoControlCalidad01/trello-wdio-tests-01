@@ -8,7 +8,6 @@ class RightMenu {
         this.closeConfirmButton = 'input.js-confirm.full.negate';
         this.deleteBoard = 'a.quiet.js-delete';
 
-
     }
 
 

@@ -7,7 +7,6 @@ class FormBoard {
         this.createButton = 'button.primary';
 
     }
-
     setNameBoardField(titleBoard) {
         commonActions.setValue(this.title, titleBoard);
     }

@@ -6,6 +6,7 @@ class FormCard {
         this.addCard = 'span.js-add-a-card';
         this.nameField = 'textarea.list-card-composer-textarea';
         this.saveButton = 'input.js-add-card';
+
     }
 
     fillCardForm(listJson) {

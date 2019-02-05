@@ -15,7 +15,6 @@ describe('Board Feature', () => {
             'Title': '000 NEW BOARD FOR AUTOMARESD TEST'
         };
 
-
         util.createBoard(board);
 
         let formEditBoard = new EditFormBoard();

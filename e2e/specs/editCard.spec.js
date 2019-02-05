@@ -6,55 +6,47 @@ const FormCard = require('../pages/formCard.po');
 const FormEditCard = require('../pages/formEditCard.po');
 const expect = require('chai').expect;
 
-describe('Edit Card', () => {
+describe('Card Feature', () => {
+
     let header;
     beforeEach(() => {
 
-        header = Login.loginAs(credentials.standardUser.username, credentials.standardUser.password);
+        header = Login.loginAs(credentials.sysadmin.username, credentials.sysadmin.password);
 
         let board = {
-            'Title': '000New Board'
+            'Title': 'New Board To Test'
         };
         util.createBoard(board);
         let formList = new FormList();
 
         let listData = {
-            'Title': 'NewList'
+            'Title': 'New List to Test'
         };
-        formList.fillListForm(listData);
-        browser.pause(4000);
+        formList.filListForm(listData);
         formList.clickSaveButton();
-        browser.pause(4000);
     });
 
-    it('Edit', () => {
+    it('Edit Card', () => {
 
         let formCard = new FormCard();
-
         formCard.clickNewLink();
 
         let listData = {
-            'Title': 'NewCard'
+            'Title': 'New List to Test'
         };
         formCard.fillCardForm(listData);
-        browser.pause(4000);
         formCard.clickSaveButton();
-        browser.pause(4000);
-        /////////////////////
         let formEditCard = new FormEditCard();
         formEditCard.clickNameField();
-        browser.pause(4000);
         formEditCard.clickDialogNameField();
         let editData = {
-            'Title': 'EditedCard'
+            'Title': 'Edit  Card Test'
         };
         formEditCard.fillEditCardForm(editData);
         formEditCard.clickCloseButton();
         browser.pause(4000);
-        //////////////////////assert
-        //formEditCard.clickNameField();
-        expect(formEditCard.getNameText()).to.equal(editData.Title);
 
+        expect(formEditCard.getNameText()).to.equal(editData.Title);
 
     });
 

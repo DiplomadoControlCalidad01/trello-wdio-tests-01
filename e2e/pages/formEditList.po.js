@@ -9,8 +9,7 @@ class EditListForm {
         this.editedField = 'h2.js-list-name-assist';
     }
 
-
-    clickEditLink() {
+     clickEditLink() {
         commonActions.click(this.nameLink);
     }
 
