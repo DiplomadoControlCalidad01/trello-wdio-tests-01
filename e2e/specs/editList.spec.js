@@ -23,7 +23,7 @@ describe('Edit List', () => {
         let listData = {
             'Title': 'NewList'
         };
-        formList.filListForm(listData);
+        formList.fillListForm(listData);
         browser.pause(4000);
         formList.clickSaveButton();
         browser.pause(4000);
